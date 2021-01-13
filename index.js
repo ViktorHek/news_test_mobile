@@ -6,4 +6,12 @@ import App from "./App";
 
 const ConnectedApp = () => <Provider store={store}><App/></Provider>
 
+// const ConnectedApp = () => {
+//   return (
+//     <Provider store={store}>
+//       <App/>
+//     </Provider>
+//   )
+// }
+
 registerRootComponent(ConnectedApp);
