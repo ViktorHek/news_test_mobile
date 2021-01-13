@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
 });
 
 const MainScreen = () => {
-  const { articles } = useSelector(state => state);
-  useEffect(() => Articles.index(), []);
+  const { articles } = useSelector((state) => state);
+  useEffect(() => { Articles.index() }, []);
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <FlatList
         data={articles}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => <Text>{item.title}</Text>}
       />
     </View>
