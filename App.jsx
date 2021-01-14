@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MainScreen from "./component/MainScreen";
+import ArticleShow from "./component/ArticleShow"
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,12 @@ const App = () => {
               color: "white",
               fontSize: 22,
             },
+          }}
+        />
+        <Stack.Screen name="ArticleShow"
+          component={ArticleShow}
+          options= {{
+            title: 'My Article'
           }}
         />
       </Stack.Navigator>

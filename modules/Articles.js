@@ -6,6 +6,10 @@ const Articles = {
   async index() {
     let response = await axios.get(API_URL + '/articles')
     store.dispatch({type: 'UPDATE_ARTICLE_INDEX', payload: response.data})
+  },
+  async show(id){
+      let response = await axios.get(API_URL + `/articles/${id}`)
+      store.dispatch({type: "SET_CURRENT_ARTCLE", payload: response.data})
   }
 }
 
