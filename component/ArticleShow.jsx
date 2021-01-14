@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
   },
-  title: {
+  body: {
     padding: 20,
     color: "grey",
     fontSize: 18,
