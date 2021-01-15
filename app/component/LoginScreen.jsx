@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import Auth from "../modules/auth";
 
-const LoginScreen = () => {
+const LoginScreen = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const auth = new Auth('https://newsroom-api.herokuapp.com/api')
-  const authenticateUser = async () => {
-    let response = await auth.signIn(email, password)
-    debugger
+  const [message, setMessage] = useState("")
+  const auth = new Auth({host: 'https://newsroom-api.herokuapp.com/api'})
+  
+  const authenticateUser = () => {
+    // let response = await 
+    auth.signIn(email, password)
+      .then((resp) => {
+        props.navigation.navigate('Start')
+      }).catch(e => {
+        setMessage(e.response.data.errors[0])
+      })
   }
 
   return (
@@ -31,6 +38,10 @@ const LoginScreen = () => {
         // style={{backgroundColor: "green"}}
         onPress={() => authenticateUser()}
       />
+
+      {message &&
+        <Text style={{color: "red"}}>{message}</Text>
+      }
     </View>
   );
 };

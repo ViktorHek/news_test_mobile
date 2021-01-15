@@ -1,6 +1,5 @@
 import axios from "axios"
 import AsyncStorage from "@react-native-community/async-storage"
-​
 const apiUrl =
   process.env.NODE_ENV === "development" && "http://localhost:3000";
 const defaultOptions = {
@@ -9,7 +8,6 @@ const defaultOptions = {
   debug: false,
   useRoles: false,
 };
-​
 const storage = AsyncStorage;
 const storageKey = "auth-storage";
 const storageRoleKey = "auth-roles";
