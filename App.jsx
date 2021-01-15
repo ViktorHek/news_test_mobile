@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import MainScreen from "./component/MainScreen";
-import ArticleShow from "./component/ArticleShow"
+import MainScreen from "./app/component/MainScreen";
+import ArticleShow from "./app/component/ArticleShow"
 
 const Stack = createStackNavigator();
 

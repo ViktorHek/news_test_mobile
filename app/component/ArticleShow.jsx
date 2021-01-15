@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
-import Articles from "../modules/Articles";
+import Articles from "../../app/modules/Articles";
 
 const ArticleShow = (props) => {
   const { id } = props.route.params.article;
@@ -9,7 +9,7 @@ const ArticleShow = (props) => {
 
   useEffect(() => {
     Articles.show(id);
-  });
+  }, []);
 
   return (
     <View style={{ flex: 1 }}>
